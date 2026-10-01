@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#101416">
+  <meta name="description" content="De tu receta a tus recordatorios. MemoDose te ayuda a escanear tus medicamentos, revisar los datos y organizar cada toma.">
+  <title>MemoDose — Un recordatorio menos en tu cabeza</title>
+  <link rel="icon" href="assets/memodose-logo.png">
+  <link rel="stylesheet" href="styles.css">
+  <script src="app.js" defer></script>
+</head>
+<body>
+  <a class="skip" href="#contenido">Ir al contenido</a>
+  <header class="header wrap">
+    <a class="brand" href="./" aria-label="MemoDose, inicio"><img src="assets/memodose-logo.png" alt="" width="42" height="42">MemoDose</a>
+    <nav aria-label="Principal"><a href="#como-funciona">Cómo funciona</a><a href="#tu-dia">Tu día</a><a href="#preguntas">Preguntas</a></nav>
+    <button class="language-switch" id="language-switch" type="button" aria-label="Cambiar idioma">EN</button>
+    <a class="button button-small" href="#disponibilidad">Conoce MemoDose <span aria-hidden="true">↗</span></a>
+  </header>
+  <main id="contenido">
+    <section class="hero wrap">
+      <div class="hero-copy">
+        <p class="availability"><span></span>Tu rutina, un poco más ligera</p>
+        <h1>Un recordatorio <br>menos en<br>tu cabeza.</h1>
+        <p class="intro">Tu receta se convierte en recordatorios.<br class="desktop-break"> Escanea, revisa y sigue con tu día.<br class="desktop-break"> MemoDose te avisa cuando toca.</p>
+        <div class="hero-actions"><a class="button" href="#como-funciona">Así funciona <span aria-hidden="true">↓</span></a><span class="coming">Próximamente para iPhone</span></div>
+        <div class="hero-footnote"><span class="mini-check" aria-hidden="true">✓</span> Tú siempre confirmas los datos antes de guardar.</div>
+      </div>
+      <div class="hero-visual" aria-label="Ejemplo ilustrativo de un día en MemoDose">
+        <div class="orbit orbit-one" aria-hidden="true"></div><div class="orbit orbit-two" aria-hidden="true"></div>
+        <div class="scan-note"><span class="scan-icon" aria-hidden="true">⌗</span><div><strong>Receta escaneada</strong><span>Revisada por ti. Lista para tu día.</span></div><span class="check-circle" aria-hidden="true">✓</span></div>
+        <div class="phone">
+          <div class="phone-top"><span>9:41</span><span class="island"></span><span aria-hidden="true">▰ ▰</span></div>
+          <div class="phone-content">
+            <div class="app-heading"><div><h2>Hoy</h2><p>Un día a la vez.</p></div><img src="assets/memodose-logo.png" alt="" width="42" height="42"></div>
+            <div class="progress-card"><div class="ring"><div><strong id="dose-count">1/3</strong><span>tomadas</span></div></div><div><strong>Vas bien.</strong><p>Cada toma cuenta.</p><div class="legend"><span></span> Tu progreso de hoy</div></div></div>
+            <div class="due-card"><div class="due-label"><span class="status-dot"></span><span id="dose-status">Toca ahora</span><span>09:00</span></div><h3>Tu medicamento</h3><p>La dosis que confirmaste</p><button type="button" id="take-dose"><span aria-hidden="true">✓</span> Marcar como tomada</button></div>
+            <div class="schedule-heading"><strong>Tu horario</strong><span>Hoy</span></div>
+            <div class="schedule-row"><span>08:00</span><div><strong>Toma de la mañana</strong><small>Registrada</small></div><span class="taken-check" aria-hidden="true">✓</span></div>
+            <div class="schedule-row"><span>21:00</span><div><strong>Toma de la noche</strong><small>Más tarde</small></div><span class="later-dot" aria-hidden="true"></span></div>
+            <div class="app-tabs" aria-hidden="true"><span class="active">◷<small>Hoy</small></span><span>▤<small>Recetas</small></span><span>◴<small>Historial</small></span></div>
+          </div>
+          <div class="home-indicator" aria-hidden="true"></div>
+        </div>
+        <p class="demo-caption" id="demo-message" aria-live="polite">Una vista de tu día. Prueba a marcar la toma.</p>
+      </div>
+    </section>
+    <section class="formats wrap" aria-label="Documentos compatibles"><span>Empieza con lo que tienes.</span><ul><li>Receta impresa</li><li>Receta manuscrita</li><li>Caja o envase</li><li>PDF o captura</li></ul></section>
+    <section class="how wrap section" id="como-funciona">
+      <div class="section-heading"><h2>De la receta<br>a tu rutina.</h2><p>Menos datos que escribir.<br>Más claridad para cada día.</p></div>
+      <div class="steps">
+        <article class="step"><div class="step-visual paper-visual" aria-hidden="true"><div class="paper"><span>Tu receta</span><div class="handwriting">Medicación<br>y horarios</div><i></i><i></i><i></i></div><div class="scan-corners"></div><span class="visual-chip">Lista para escanear</span></div><div class="step-title"><span>1</span><h3>Escanea.</h3></div><p>Haz una foto de tu receta o envase, o importa un PDF o una captura. La IA extrae los datos de tus medicamentos.</p></article>
+        <article class="step"><div class="step-visual review-visual" aria-hidden="true"><div class="review-sheet"><div><strong>Datos de la receta</strong><span>✓</span></div><p>Medicamento <span>Detectado</span></p><p>Horario <span>Por confirmar</span></p><p class="review-highlight">Duración <span>Revisar</span></p><div class="review-confirm">Revisar y guardar</div></div></div><div class="step-title"><span>2</span><h3>Revisa.</h3></div><p>Comprueba el medicamento, la dosis y los horarios. Corrige lo que haga falta: nada se guarda sin tu confirmación.</p></article>
+        <article class="step"><div class="step-visual notification-visual" aria-hidden="true"><span class="big-time">09:00</span><div class="notification"><img src="assets/memodose-logo.png" alt="" width="36" height="36"><div><span>MemoDose <small>ahora</small></span><strong>Es hora de tu toma.</strong><p>Tu recordatorio está listo.</p></div></div></div><div class="step-title"><span>3</span><h3>Sigue con tu día.</h3></div><p>Recibe el recordatorio, registra tu toma y consulta tu historial. Tu rutina, organizada en un solo lugar.</p></article>
+      </div>
+    </section>
+    <section class="daily-section" id="tu-dia"><div class="wrap daily-grid"><div class="daily-copy"><h2>«¿Ya me la tomé?»<br>Ahora puedes verlo.</h2><p>Lo que tomaste, lo que toca y lo que viene después. MemoDose te ayuda a llevar el hilo sin tener que recordarlo todo.</p><ul class="benefits"><li><span>✓</span> Consulta tus tomas de un vistazo</li><li><span>✓</span> Lleva un historial de tu rutina</li><li><span>✓</span> Añade medicamentos también a mano</li></ul></div><div class="day-timeline"><div class="timeline-date">Tu día, en orden <span>Hoy</span></div><div class="timeline-item done"><span class="timeline-node">✓</span><time>08:00</time><div><h3>Una cosa menos.</h3><p>Toma registrada</p></div><span class="timeline-pill">Tomada</span></div><div class="timeline-item current"><span class="timeline-node"></span><time>09:00</time><div><h3>Un pequeño recordatorio.</h3><p>Tu siguiente toma</p></div><span class="timeline-pill">Ahora</span></div><div class="timeline-item"><span class="timeline-node"></span><time>21:00</time><div><h3>Por ahora, sigue con tu día.</h3><p>Te avisaremos cuando toque</p></div></div></div></div></section>
+    <section class="trust wrap section"><img src="assets/memodose-logo.png" alt="Elefante de MemoDose" width="100" height="100"><div><h2>Una ayuda para recordar.<br>La última palabra es tuya.</h2><p>La IA lee la receta; tú revisas el resultado. MemoDose organiza los datos que confirmas y no sustituye las indicaciones de tu profesional de salud.</p></div></section>
+    <section class="faq wrap section" id="preguntas"><div><h2>Por si te <br>lo preguntas.</h2><p>Las cosas claras desde el principio.</p></div><div class="questions">
+      <details><summary>¿Tengo que escanear una receta?<span aria-hidden="true">+</span></summary><p>No. También puedes añadir tus medicamentos a mano y configurar sus horarios. El escaneo es una ayuda para reducir lo que tienes que escribir.</p></details>
+      <details><summary>¿Y si la IA lee algo mal?<span aria-hidden="true">+</span></summary><p>Siempre revisas el resultado antes de guardarlo. Puedes corregir los datos y completar lo que no se haya podido leer. Confirma la información con tu receta y consulta a tu profesional de salud si tienes dudas.</p></details>
+      <details><summary>¿MemoDose es gratis?<span aria-hidden="true">+</span></summary><p>MemoDose está pensada con una prueba gratis de 7 días y una suscripción mensual o anual. Podrás consultar el precio y las condiciones en la app antes de suscribirte.</p></details>
+      <details><summary>¿Qué pasa si vence mi suscripción?<span aria-hidden="true">+</span></summary><p>Los recordatorios que ya configuraste siguen funcionando. Para escanear, añadir o editar medicamentos, necesitas una suscripción activa.</p></details>
+      <details><summary>¿Cómo funciona el escaneo con IA?<span aria-hidden="true">+</span></summary><p>Con tu consentimiento, el documento que eliges se envía a un servicio en la nube que usa Claude, de Anthropic, para extraer sus datos. Puedes desactivar el escaneo con IA en Ajustes y añadir tus medicamentos manualmente.</p></details>
+      <details><summary>¿Cuándo podré descargarla?<span aria-hidden="true">+</span></summary><p>Estamos preparando el lanzamiento para iPhone. Aquí encontrarás el enlace de descarga cuando MemoDose esté disponible. También está prevista una versión para Android.</p></details>
+    </div></section>
+    <section class="closing wrap" id="disponibilidad"><img src="assets/memodose-logo.png" alt="" width="64" height="64"><h2>Tu día tiene más cosas<br>que recordar.</h2><p>Deja que MemoDose te ayude con esta.</p><div class="launch-status"><span></span> Próximamente para iPhone</div><a href="#como-funciona">Vuelve a conocer cómo funciona <span aria-hidden="true">↑</span></a></section>
+  </main>
+  <footer class="footer wrap"><a class="brand" href="./"><img src="assets/memodose-logo.png" alt="" width="30" height="30">MemoDose</a><span>Una app de LoneMonkey.</span><a href="https://www.apple.com/legal/internet-services/itunes/dev/stdeula/">Términos de uso</a><span class="copyright">© <span id="year">2026</span> MemoDose</span></footer>
+</body>
+</html>
