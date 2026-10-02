@@ -29,7 +29,7 @@ const translations = {
     trust: ['Elefante de MemoDose', 'Una ayuda para recordar.<br>La última palabra es tuya.', 'La IA lee la receta; tú revisas el resultado. MemoDose organiza los datos que confirmas y no sustituye las indicaciones de tu profesional de salud.'],
     faq: ['Por si te <br>lo preguntas.', 'Las cosas claras desde el principio.', '¿Tengo que escanear una receta?', 'No. También puedes añadir tus medicamentos a mano y configurar sus horarios. El escaneo es una ayuda para reducir lo que tienes que escribir.', '¿Y si la IA lee algo mal?', 'Siempre revisas el resultado antes de guardarlo. Puedes corregir los datos y completar lo que no se haya podido leer. Confirma la información con tu receta y consulta a tu profesional de salud si tienes dudas.', '¿MemoDose es gratis?', 'MemoDose está pensada con una prueba gratis de 7 días y una suscripción mensual o anual. Podrás consultar el precio y las condiciones en la app antes de suscribirte.', '¿Qué pasa si vence mi suscripción?', 'Los recordatorios que ya configuraste siguen funcionando. Para escanear, añadir o editar medicamentos, necesitas una suscripción activa.', '¿Cómo funciona el escaneo con IA?', 'Con tu consentimiento, el documento que eliges se envía a un servicio en la nube que usa Claude, de Anthropic, para extraer sus datos. Puedes desactivar el escaneo con IA en Ajustes y añadir tus medicamentos manualmente.', '¿Cuándo podré descargarla?', 'Estamos preparando el lanzamiento para iPhone. Aquí encontrarás el enlace de descarga cuando MemoDose esté disponible. También está prevista una versión para Android.'],
     close: ['Tu día tiene más cosas<br>que recordar.', 'Deja que MemoDose te ayude con esta.', 'Próximamente para iPhone', 'Vuelve a conocer cómo funciona ↑'],
-    footer: ['Una app de LoneMonkey.', 'Términos de uso']
+    footer: ['Una app de LoneMonkey.', 'Términos de uso', 'Privacidad', 'Soporte']
   },
   en: {
     nav: ['How it works', 'Your day', 'Questions'],
@@ -41,7 +41,7 @@ const translations = {
     trust: ['MemoDose elephant', 'A little help remembering.<br>You have the final word.', 'AI reads the prescription; you review the result. MemoDose organizes the details you confirm and never replaces guidance from your healthcare professional.'],
     faq: ['In case you<br>were wondering.', 'Clear answers from the start.', 'Do I have to scan a prescription?', 'No. You can also add medications by hand and set their schedules. Scanning simply means less to type.', 'What if AI gets something wrong?', 'You always review the result before saving it. Correct details and fill in anything it could not read. Check your prescription and ask your healthcare professional if you have questions.', 'Is MemoDose free?', 'MemoDose starts with a 7-day free trial and a monthly or annual subscription. You can see the price and terms in the app before subscribing.', 'What happens when my subscription ends?', 'Existing reminders keep working. To scan, add, or edit medications, you need an active subscription.', 'How does the AI scan work?', 'With your consent, the document you choose is sent to a cloud service using Anthropic’s Claude to extract its details. You can turn off AI scanning in Settings and add medications manually.', 'When can I download it?', 'We’re preparing the iPhone launch. This is where you’ll find the download link when MemoDose is available. An Android version is also planned.'],
     close: ['Your day has enough<br>to remember.', 'Let MemoDose help with this one.', 'Coming soon for iPhone', 'See how it works again ↑'],
-    footer: ['An app by LoneMonkey.', 'Terms of use']
+    footer: ['An app by LoneMonkey.', 'Terms of use', 'Privacy', 'Support']
   }
 };
 
@@ -112,7 +112,14 @@ function applyLanguage(language) {
   t.trust.forEach((v, i) => setText(['.trust img', '.trust h2', '.trust p'][i], v));
   t.faq.forEach((v, i) => setText(i < 2 ? ['.faq h2', '.faq>div>p'][i] : i % 2 === 0 ? '.questions summary' : '.questions details>p', v, i < 2 ? 0 : Math.floor((i - 2) / 2)));
   t.close.forEach((v, i) => setText(['.closing h2', '.closing>p', '.launch-status', '.closing>a'][i], v));
-  t.footer.forEach((v, i) => setText(['.footer>span:not(.copyright)', '.footer>a:not(.brand)'][i], v));
+  setText('.footer>span:not(.copyright)', t.footer[0]);
+  // Terms, privacy and support; the last two have a page per language.
+  const footerLinks = document.querySelectorAll('.footer-links a');
+  const footerPages = [null, language === 'en' ? 'privacy.html' : 'privacidad.html', language === 'en' ? 'support.html' : 'soporte.html'];
+  footerLinks.forEach((link, index) => {
+    link.textContent = t.footer[index + 1];
+    if (footerPages[index]) link.href = footerPages[index];
+  });
   document.querySelector('#language-switch').textContent = language === 'en' ? 'ES' : 'EN';
   document.querySelector('#language-switch').setAttribute('aria-label', language === 'en' ? 'Switch to Spanish' : 'Cambiar a inglés');
   localStorage.setItem('memodose-language', language);

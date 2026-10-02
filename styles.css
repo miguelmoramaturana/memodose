@@ -24,3 +24,27 @@
 @media(max-width:800px){.hero{grid-template-columns:minmax(0,1fr)}}
 @media(max-width:360px){.phone{zoom:.9}.hero h1{font-size:46px}.hero-actions{gap:12px}.hero-actions .button{gap:20px}.hero-footnote{font-size:9px}}
 .language-switch{border:1px solid #ffffff30;background:transparent;color:var(--muted);border-radius:7px;padding:9px 10px;font-size:12px;cursor:pointer;letter-spacing:.04em}.language-switch:hover{color:var(--teal);border-color:#4fd1c55c}
+
+/* Footer links: terms, privacy and support. */
+.footer-links{display:flex;gap:22px;margin-left:auto}.footer-links a[aria-current]{color:var(--text)}
+@media(max-width:800px){.footer-links{margin-left:0;flex-wrap:wrap;gap:10px 18px}}
+
+/* Privacy and support pages. */
+.legal{max-width:760px;padding:40px 0 100px}
+.legal-kicker{color:var(--teal);font-size:14px;margin-bottom:18px}
+.legal h1{font-size:clamp(2.4rem,5vw,3.6rem);letter-spacing:-.045em}
+.legal-date{font-size:13px;margin-top:18px}
+.legal-lead{font-size:17px;line-height:1.8;margin:26px 0 8px;color:#c0c7c9}
+.legal h2{font-size:24px;letter-spacing:-.02em;margin:48px 0 14px}
+.legal p+p{margin-top:14px}
+.legal ul{color:var(--muted);padding-left:20px;margin:0}.legal li+li{margin-top:10px}
+.legal strong{color:var(--text);font-weight:600}
+.legal main a,.legal p a,.legal li a{color:var(--teal);text-decoration:underline;text-underline-offset:3px}
+.legal .button{color:#08120f;text-decoration:none;margin-top:22px}
+.legal-table{overflow-x:auto;margin:6px 0 18px;border:1px solid var(--line);border-radius:12px}
+.legal table{width:100%;border-collapse:collapse;font-size:14px;min-width:560px}
+.legal th,.legal td{text-align:left;vertical-align:top;padding:14px 16px;border-bottom:1px solid var(--line)}
+.legal th{font-weight:600;color:var(--text);background:var(--card)}
+.legal td{color:var(--muted)}.legal tr:last-child td{border-bottom:0}
+.legal .questions summary{font-size:16px}
+@media(max-width:800px){.legal{padding:16px 0 70px}.legal-lead{font-size:16px}.legal h2{font-size:21px;margin-top:40px}}
