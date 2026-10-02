@@ -21,7 +21,7 @@ Las fuentes Outfit y Libre Franklin se cargan desde Google Fonts y tienen altern
 - Cambiar «Próximamente» por el enlace real de App Store cuando esté disponible.
 - Confirmar precio, prueba y disponibilidad definitivos. No se muestran precios inventados ni botones falsos de descarga.
 - Política y soporte completos (responsable Miguel Mora Maturana, contacto hello@memodose.app, en vigor desde el 1 de octubre de 2026). Si cambias la política, actualiza la fecha. Las URL de privacidad y soporte van en App Store Connect (español → `privacidad.html` / `soporte.html`, inglés → `privacy.html` / `support.html`) y en `Links.swift` de la app.
-- Dominio: https://memodose.app (las páginas ya tienen su URL canónica). Los dominios .app exigen HTTPS. Configurar el reenvío de hello@memodose.app antes del lanzamiento.
+- Dominio: https://www.memodose.app en Vercel; memodose.app redirige a www (las páginas ya tienen su URL canónica). Los dominios .app exigen HTTPS. Configurar el reenvío de hello@memodose.app antes del lanzamiento.
 - La vista de la app es una ilustración HTML interactiva basada en el diseño y comportamiento actuales, no una captura de la app. No almacena ni transmite datos.
 
 ## Archivos
